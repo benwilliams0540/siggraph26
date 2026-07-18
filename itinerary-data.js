@@ -9,7 +9,7 @@
  */
 
 window.ITINERARY_DATA = {
-  updatedAt: "2026-07-18T00:39:16-04:00",
+  updatedAt: "2026-07-18T01:49:15-04:00",
   travelSummary: "Flights booked · Hotel booked",
   conference: {
     name: "SIGGRAPH 2026",
@@ -88,9 +88,9 @@ window.ITINERARY_DATA = {
 
   days: [
     { date: "2026-07-19", short: "Sun", label: "Sunday", theme: "Arrival & orientation" },
-    { date: "2026-07-20", short: "Mon", label: "Monday", theme: "Research, education & first splats" },
-    { date: "2026-07-21", short: "Tue", label: "Tuesday", theme: "The big overlap day" },
-    { date: "2026-07-22", short: "Wed", label: "Wednesday", theme: "Animation, capture & performance" },
+    { date: "2026-07-20", short: "Mon", label: "Monday", theme: "Research, author discussions & roundtables" },
+    { date: "2026-07-21", short: "Tue", label: "Tuesday", theme: "3DGS, industry & Real-Time Live" },
+    { date: "2026-07-22", short: "Wed", label: "Wednesday", theme: "Animation, exhibition & open standards" },
     { date: "2026-07-23", short: "Thu", label: "Thursday", theme: "Worlds, reconstruction & wrap-up" },
     { date: "2026-07-24", short: "Fri", label: "Friday", theme: "Free day in Los Angeles" },
     { date: "2026-07-25", short: "Sat", label: "Saturday", theme: "Flight home" }
@@ -141,8 +141,8 @@ window.ITINERARY_DATA = {
       location: "411 Theatre",
       people: ["brother"],
       access: ["Experience", "Full"],
-      status: "recommended",
-      note: "Pipeline walkthrough from capture stage to finished cinematic."
+      status: "option",
+      note: "Travel-dependent option: pipeline walkthrough from capture stage to finished cinematic. Skip without regret if the LAX transfer, food or badge pickup runs long."
     },
     {
       id: "sun-tyree",
@@ -213,6 +213,21 @@ window.ITINERARY_DATA = {
       status: "anchor",
       showInterest: false,
       note: "Registration and attendee services close at 6:00 p.m. Sunday."
+    },
+    {
+      id: "sun-arrival-reset",
+      date: "2026-07-19",
+      start: "13:00",
+      end: "13:45",
+      title: "Food, orientation & building reset",
+      subtitle: "Learn the route between West Hall, Concourse Hall and the paper rooms",
+      type: "Protected arrival buffer",
+      location: "LACC",
+      people: ["me", "brother"],
+      access: [],
+      status: "anchor",
+      showInterest: false,
+      note: "Sunday succeeds if bags are handled, both badges are collected and the building makes sense. Every fixed session before 2:00 p.m. remains optional."
     },
     {
       id: "sun-gaussian-posters",
@@ -406,7 +421,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "anchor",
-      note: "Papers include structure-aware densification, SHARP-GS ultra-high-res rendering and A LoD of Gaussians for out-of-core scenes. Full badge only.",
+      note: "Stay through the 3:00–3:30 interactive author discussion. Papers include Gaussian Point Splatting, A LoD of Gaussians and Mobile3DGS³; this full block wins the conflict with the web-gaming session. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess137"
     },
     {
@@ -435,8 +450,8 @@ window.ITINERARY_DATA = {
       location: "Concourse Hall",
       people: ["me"],
       access: ["Experience", "Full"],
-      status: "anchor",
-      note: "Case study of 3DGS shipped in a playable web title."
+      status: "option",
+      note: "Useful case study of 3DGS shipped in a playable web title, but no longer an anchor: stay for the 3DGS I author discussion unless a very specific product question makes this the better choice."
     },
     {
       id: "mon-powered-splats",
@@ -451,6 +466,22 @@ window.ITINERARY_DATA = {
       access: ["Full"],
       status: "wishlist",
       note: "Hands-on course on turning world models into interactive 3D worlds. Overlaps the end of the web-gaming session."
+    },
+    {
+      id: "mon-siggraph-roundtables",
+      date: "2026-07-20",
+      start: "15:45",
+      end: "17:25",
+      title: "SIGGRAPH Roundtables: Beyond the Talk",
+      subtitle: "Table 4 · Gaussian splatting, digital twins & immersive capture",
+      type: "Roundtables",
+      location: "Room 409 AB",
+      people: ["me", "brother"],
+      interest: { me: 4, brother: 2 },
+      access: ["Full"],
+      status: "anchor",
+      note: "Highest-value Monday networking format. Seats are capped at 10 per table and first-come, first-served; go directly from 3DGS I and arrive early for Table 4.",
+      url: "https://s2026.conference-schedule.org/presentation/?id=misc_181&sess=sess592"
     },
     {
       id: "mon-electronic-theater",
@@ -477,11 +508,12 @@ window.ITINERARY_DATA = {
       title: "From Splats to Worlds",
       subtitle: "Advanced 3DGS applications",
       type: "Birds of a Feather",
-      location: "Room 510",
+      location: "Room 518",
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Open community session on advanced 3DGS applications — practitioners comparing notes."
+      note: "Arrive 15–20 minutes early. Open community session on compression, animated splats, volumetric capture and distribution, world models, interoperability and archival formats.",
+      url: "https://www.khronos.org/events/siggraph-2026"
     },
     {
       id: "tue-zootopia",
@@ -571,6 +603,22 @@ window.ITINERARY_DATA = {
       note: "A second practical Chaos session immediately after the ray-traced splat talk."
     },
     {
+      id: "tue-exhibition-networking",
+      date: "2026-07-21",
+      start: "12:00",
+      end: "13:45",
+      title: "Lunch, Exhibition & spontaneous conversations",
+      subtitle: "Protect the unstructured block",
+      type: "Networking block",
+      location: "West Hall",
+      people: ["me", "brother"],
+      interest: { me: 3, brother: 2 },
+      access: ["Discover", "Experience", "Full"],
+      status: "recommended",
+      note: "Do not fill this with another talk. Eat, walk target booths and aim for one substantive conversation with someone shipping 3D, capture or graphics products.",
+      url: "https://s2026.siggraph.org/exhibit-at-siggraph/"
+    },
+    {
       id: "tue-live-from-la",
       date: "2026-07-21",
       start: "14:00",
@@ -640,6 +688,37 @@ window.ITINERARY_DATA = {
       note: "District Cinema and Epic Games run a live improvised D&D show through motion capture, AI narrative tools and real-time XR.",
       url: "https://s2026.conference-schedule.org/presentation/?id=gensubcur105&sess=sess380"
     },
+    {
+      id: "tue-reset-before-rtl",
+      date: "2026-07-21",
+      start: "16:00",
+      end: "17:00",
+      title: "Notes, Exhibition follow-ups & reset",
+      subtitle: "Turn the day's conversations into next actions before the evening anchor",
+      type: "Protected buffer",
+      location: "LACC",
+      people: ["me"],
+      access: [],
+      status: "recommended",
+      showInterest: false,
+      note: "Capture names, affiliations, promised follow-ups and the problems people described. Revisit one booth if useful, then eat and recharge before Real-Time Live."
+    },
+    {
+      id: "tue-real-time-live",
+      date: "2026-07-21",
+      start: "18:00",
+      end: "19:45",
+      title: "Real-Time Live!",
+      subtitle: "Includes OnTheFly / GraphDeco's immediate 3DGS reconstruction demo",
+      type: "Real-Time Live!",
+      location: "Hall K",
+      people: ["me", "brother"],
+      interest: { me: 4, brother: 3 },
+      access: ["Full"],
+      status: "anchor",
+      note: "Non-negotiable Tuesday anchor. Evaluate what immediate feedback actually looks like live, note the capture guidance and failure presentation, and use it to prepare one informed Thursday question.",
+      url: "https://s2026.conference-schedule.org/session/?sess=sess315"
+    },
 
     // Wednesday
     {
@@ -678,10 +757,11 @@ window.ITINERARY_DATA = {
       subtitle: "Emerging workflows and hybrid pipelines",
       type: "Birds of a Feather",
       location: "Room 510",
-      people: ["me"],
+      people: ["me", "brother"],
+      interest: { me: 4, brother: 3 },
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Community discussion on splat-based animation workflows. Overlaps the morning demos."
+      note: "Arrive 15–20 minutes early. NFB-led discussion on acquisition, layout, lighting, editing and delivery; a strong shared session connecting Ben's capture tools with Steve's production and storytelling interests."
     },
     {
       id: "wed-motion-capture-society",
@@ -710,6 +790,22 @@ window.ITINERARY_DATA = {
       note: "Radiance-field-adjacent delivery workflow."
     },
     {
+      id: "wed-exhibition-lunch",
+      date: "2026-07-22",
+      start: "11:45",
+      end: "13:30",
+      title: "Exhibition & lunch",
+      subtitle: "First focused pass after the animation BOF",
+      type: "Networking block",
+      location: "West Hall",
+      people: ["me", "brother"],
+      interest: { me: 3, brother: 2 },
+      access: ["Discover", "Experience", "Full"],
+      status: "recommended",
+      note: "Ben can start after Gaussian Splatting for Animation; Steve can join after Motion Capture Society. Follow the strongest conversation instead of racing to fill the whole block.",
+      url: "https://s2026.siggraph.org/exhibit-at-siggraph/"
+    },
+    {
       id: "wed-virtual-theatre",
       date: "2026-07-22",
       start: "13:00",
@@ -736,6 +832,22 @@ window.ITINERARY_DATA = {
       access: ["Experience", "Full"],
       status: "recommended",
       note: "Techniques for prototyping spatial stories on minimal budgets."
+    },
+    {
+      id: "wed-exhibition-second-pass",
+      date: "2026-07-22",
+      start: "14:00",
+      end: "15:00",
+      title: "Optional Exhibition second pass",
+      subtitle: "Revisit one company or follow a promising introduction",
+      type: "Flexible networking block",
+      location: "West Hall",
+      people: ["me", "brother"],
+      interest: { me: 2, brother: 1 },
+      access: ["Discover", "Experience", "Full"],
+      status: "option",
+      note: "Use only if the first pass produced a concrete reason to return. Steve's Cheap and Cheerful session takes precedence for him.",
+      url: "https://s2026.siggraph.org/exhibit-at-siggraph/"
     },
     {
       id: "wed-refact",
@@ -792,8 +904,24 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "ShanghaiTech reconstructs multiple plausible 3D readings of figurative paintings with 3DGS, then volumetrically prints them to make the ambiguity physical.",
+      note: "ShanghaiTech reconstructs multiple plausible 3D readings of figurative paintings with 3DGS, then volumetrically prints them to make the ambiguity physical. Leave promptly for the 6:00 p.m. Khronos reception.",
       url: "https://s2026.conference-schedule.org/presentation/?id=artps_121&sess=sess231"
+    },
+    {
+      id: "wed-khronos-reception",
+      date: "2026-07-22",
+      start: "18:00",
+      end: "21:00",
+      title: "Khronos Networking Reception",
+      subtitle: "Open 3D, glTF, graphics, XR and AI working-group community",
+      type: "Networking reception · RSVP",
+      location: "JW Marriott Los Angeles L.A. LIVE",
+      people: ["me", "brother"],
+      interest: { me: 4, brother: 2 },
+      access: ["Experience", "Full"],
+      status: "anchor",
+      note: "High-value standards and product networking. Space is limited: RSVP through the Khronos page and do not treat attendance as confirmed until registration is complete.",
+      url: "https://www.khronos.org/events/siggraph-2026"
     },
 
     // Thursday
@@ -890,7 +1018,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "anchor",
-      note: "Papers include 4D splatting under uncertainty, learned view-dependent kernels, Radiance Fields from Photons and reflective dual splatting. Full badge only.",
+      note: "Papers include 4D splatting under uncertainty, learned view-dependent kernels, Radiance Fields from Photons and reflective dual splatting. Stay through the 3:00–3:30 interactive author discussion. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess136"
     },
     {
@@ -919,7 +1047,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "anchor",
-      note: "Papers include RaDe-GS depth rasterization, sparse-view GeoQuery and Inria's immediate unordered-input reconstruction, closing with an interactive discussion. Full badge only.",
+      note: "OnTheFly / GraphDeco's immediate unordered-input reconstruction is scheduled for 4:05–4:15 p.m., presented by George Drettakis. Stay through the closing interactive author discussion and speak with the team there if no earlier meeting materialized. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess138"
     },
 
