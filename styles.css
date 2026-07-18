@@ -658,16 +658,37 @@ noscript {
   }
 
   .trip-label {
-    font-size: .62rem;
+    display: none;
   }
 
   .source-links {
-    gap: 0;
+    display: flex;
+    gap: .4rem;
   }
 
   .source-link {
-    font-size: .58rem;
-    line-height: 1.2;
+    display: inline-flex;
+    min-height: 2.5rem;
+    padding: .45rem .65rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: .66rem;
+    gap: .15rem;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .source-link:hover,
+  .source-link:focus-visible {
+    border-color: currentColor;
+    background: var(--surface-strong);
+  }
+
+  .source-link-detail {
+    display: none;
   }
 
   .control-row {
