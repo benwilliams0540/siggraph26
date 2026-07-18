@@ -9,7 +9,8 @@
  */
 
 window.ITINERARY_DATA = {
-  updatedAt: "2026-07-18T09:41:00-04:00",
+  updatedAt: "2026-07-18T00:39:16-04:00",
+  travelSummary: "Flights booked · Hotel booked",
   conference: {
     name: "SIGGRAPH 2026",
     subtitle: "Ben + Steve at SIGGRAPH 2026",
@@ -61,13 +62,14 @@ window.ITINERARY_DATA = {
       id: "hotel",
       icon: "■",
       eyebrow: "Stay",
-      title: "Hotel in Los Angeles",
-      status: "TBD",
-      lines: ["Hotel name", "Address", "Check-in time"],
+      title: "The Biltmore Los Angeles",
+      status: "Confirmed",
+      lines: ["Sun, Jul 19 → Sat, Jul 25 · 6 nights", "506 S Grand Ave, Los Angeles, CA 90071", "Check-in 3:00 p.m. · check-out 11:00 a.m."],
       links: [
-        { label: "LACC", url: "https://www.google.com/maps/search/?api=1&query=Los+Angeles+Convention+Center" }
+        { label: "Hotel map", url: "https://www.google.com/maps/search/?api=1&query=The+Biltmore+Los+Angeles+506+S+Grand+Ave+Los+Angeles+CA+90071" },
+        { label: "Walk to LACC", url: "https://www.google.com/maps/dir/?api=1&origin=The+Biltmore+Los+Angeles+506+S+Grand+Ave+Los+Angeles+CA+90071&destination=Los+Angeles+Convention+Center+1201+S+Figueroa+St+Los+Angeles+CA+90015&travelmode=walking" }
       ],
-      note: "Prefer an official conference hotel or somewhere walkable to LACC."
+      note: "Booked through official SIGGRAPH housing · about 1.3 miles from LACC."
     },
     {
       id: "return",
@@ -126,7 +128,7 @@ window.ITINERARY_DATA = {
       access: [],
       status: "anchor",
       showInterest: false,
-      note: "Planning buffer; adjust for bags, pickup and the hotel once those details are known."
+      note: "Hotel check-in starts at 3:00 p.m.; allow time for bags and Sunday traffic before LACC."
     },
     {
       id: "sun-performance-capture",
@@ -935,7 +937,7 @@ window.ITINERARY_DATA = {
       access: [],
       status: "recommended",
       interest: { me: 3, brother: 2 },
-      note: "Grand Central Market opens at 8:00 a.m.; The Last Bookstore's Downtown page currently lists a 10:00 a.m. Friday opening. Confirm the route once the hotel is known.",
+      note: "Grand Central Market opens at 8:00 a.m.; The Last Bookstore's Downtown page currently lists a 10:00 a.m. Friday opening. Start from the Biltmore; both stops are downtown.",
       url: "https://grandcentralmarket.com/visit-the-market/"
     },
     {

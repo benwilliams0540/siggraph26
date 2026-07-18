@@ -32,6 +32,7 @@
     scopeControls: document.querySelector("[data-scope-controls]"),
     dayControls: document.querySelector("[data-day-controls]"),
     liveSummary: document.querySelector("[data-live-summary]"),
+    travelSummary: document.querySelector("[data-travel-summary]"),
     logistics: document.querySelector("[data-logistics]"),
     schedule: document.querySelector("[data-schedule]"),
     empty: document.querySelector("[data-empty]"),
@@ -68,6 +69,8 @@
     document.querySelectorAll("[data-schedule-link]").forEach((link) => {
       link.href = data.conference.scheduleUrl;
     });
+
+    elements.travelSummary.textContent = data.travelSummary;
 
     elements.updatedAt.dateTime = data.updatedAt;
     elements.updatedAt.textContent = new Intl.DateTimeFormat("en-US", {
