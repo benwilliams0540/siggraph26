@@ -47,6 +47,15 @@
   renderSchedule();
   window.setInterval(renderSchedule, 60_000);
 
+  const travelPanel = document.querySelector(".travel-panel");
+  if (travelPanel) {
+    const today = dateInTimeZone(effectiveNow(), data.conference.timeZone);
+    const flightDays = data.events
+      .filter((event) => /flight/i.test(event.type))
+      .map((event) => event.date);
+    if (flightDays.includes(today)) travelPanel.open = true;
+  }
+
   function hydrateFromURL() {
     const params = new URLSearchParams(window.location.search);
     if (["both", "me", "brother"].includes(params.get("person"))) state.person = params.get("person");
@@ -74,7 +83,7 @@
       <article class="logistics-card">
         <div class="logistics-top">
           <span class="logistics-icon" aria-hidden="true">${escapeHTML(item.icon)}</span>
-          <span class="tbd">${escapeHTML(item.status)}</span>
+          <span class="tbd${item.status === "Confirmed" ? " is-confirmed" : ""}">${escapeHTML(item.status)}</span>
         </div>
         <p class="eyebrow">${escapeHTML(item.eyebrow)}</p>
         <h3>${escapeHTML(item.title)}</h3>

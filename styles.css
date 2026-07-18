@@ -312,6 +312,11 @@ main {
   text-transform: uppercase;
 }
 
+.tbd.is-confirmed {
+  border-color: #74d99f;
+  color: #74d99f;
+}
+
 .logistics-card .eyebrow {
   margin: .8rem 0 0;
 }
@@ -733,10 +738,6 @@ noscript {
 
   .interest-row {
     grid-template-columns: 2.4rem 4.6rem;
-  }
-
-  .event-note {
-    display: none;
   }
 
   footer {
