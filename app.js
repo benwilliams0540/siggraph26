@@ -7,7 +7,8 @@
   const state = {
     person: "both",
     scope: "all",
-    day: "auto"
+    day: "auto",
+    overlapsOnly: false
   };
 
   const statusInterest = {
@@ -49,7 +50,7 @@
   function hydrateFromURL() {
     const params = new URLSearchParams(window.location.search);
     if (["both", "me", "brother"].includes(params.get("person"))) state.person = params.get("person");
-    if (["all", "priority", "full"].includes(params.get("scope"))) state.scope = params.get("scope");
+    if (["all", "priority", "shared", "dropin"].includes(params.get("scope"))) state.scope = params.get("scope");
     if (["auto", "all", ...data.days.map((day) => day.date)].includes(params.get("day"))) state.day = params.get("day");
   }
 
@@ -111,6 +112,7 @@
       const button = event.target.closest("[data-scope]");
       if (!button) return;
       state.scope = button.dataset.scope;
+      if (state.scope === "shared") state.person = "both";
       syncButtons();
       renderSchedule();
     });
@@ -124,10 +126,17 @@
       document.querySelector("#schedule")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
+    elements.liveSummary.addEventListener("click", (event) => {
+      if (!event.target.closest("[data-overlap-toggle]")) return;
+      state.overlapsOnly = !state.overlapsOnly;
+      renderSchedule();
+    });
+
     document.querySelector("[data-reset-filters]").addEventListener("click", () => {
       state.person = "both";
       state.scope = "all";
       state.day = "all";
+      state.overlapsOnly = false;
       syncButtons();
       renderSchedule();
     });
@@ -147,8 +156,12 @@
   }
 
   function renderSchedule() {
-    const visibleEvents = data.events.filter(matchesFilters);
-    const conflicts = conflictIDs(visibleEvents);
+    const matchedEvents = data.events.filter(matchesFilters);
+    const conflicts = conflictIDs(matchedEvents);
+    if (!conflicts.size) state.overlapsOnly = false;
+    const visibleEvents = state.overlapsOnly
+      ? matchedEvents.filter((event) => conflicts.has(event.id))
+      : matchedEvents;
     const now = effectiveNow();
     const today = dateInTimeZone(now, data.conference.timeZone);
     const nowMinutes = minutesInTimeZone(now, data.conference.timeZone);
@@ -182,9 +195,11 @@
     elements.schedule.hidden = visibleEvents.length === 0;
     elements.empty.hidden = visibleEvents.length !== 0;
 
-    const fullCount = visibleEvents.filter((event) => minimumBadge(event) === "Full").length;
     const overlapCount = conflicts.size;
-    elements.liveSummary.textContent = `${visibleEvents.length} ${plural(visibleEvents.length, "pick")} · ${fullCount} Full sessions${overlapCount ? ` · ${overlapCount} with timing overlaps` : ""}`;
+    const overlapControl = overlapCount
+      ? ` · <button type="button" class="overlap-toggle" data-overlap-toggle aria-pressed="${state.overlapsOnly}">${state.overlapsOnly ? "showing overlaps · show all" : `${overlapCount} with timing overlaps`}</button>`
+      : "";
+    elements.liveSummary.innerHTML = `${visibleEvents.length} ${plural(visibleEvents.length, "pick")}${overlapControl}`;
   }
 
   function renderEvent(event, conflicts, today, nowMinutes) {
@@ -195,6 +210,16 @@
     const past = eventHasEnded(event, today, nowMinutes);
     const current = !past && event.date === today && timeToMinutes(event.start) <= nowMinutes && timeToMinutes(event.end) > nowMinutes;
     const href = event.url || data.conference.scheduleUrl;
+
+    if (past) {
+      return `
+      <article class="event-card event-stub ${personClass} is-past">
+        <span class="stub-time">${escapeHTML(event.displayStart || formatTime(event.start))}</span>
+        <span class="stub-title">${escapeHTML(event.title)}</span>
+        <span class="past-label">✓ ended</span>
+      </article>
+    `;
+    }
 
     return `
       <article class="event-card ${personClass}${!past && conflicts.has(event.id) ? " has-conflict" : ""}${current ? " is-now" : ""}${past ? " is-past" : ""}">
@@ -214,8 +239,8 @@
           <p class="event-note">${escapeHTML(event.note)}</p>
         </div>
         ${event.showInterest === false ? "" : `
-          <div class="interest-graph" aria-label="Interest levels">
-            <span class="interest-title">Interest</span>
+          <div class="interest-graph" aria-label="Appeal levels">
+            <span class="interest-title">Appeal</span>
             ${data.travelers.map((traveler) => renderInterestRow(event, traveler)).join("")}
           </div>
         `}
@@ -240,7 +265,8 @@
     const dayMatches = selectedDay === "all" || event.date === selectedDay;
     const scopeMatches = state.scope === "all"
       || (state.scope === "priority" && priorityInterest(event) >= 3)
-      || (state.scope === "full" && minimumBadge(event) === "Full");
+      || (state.scope === "shared" && interestLevel(event, "me") > 0 && interestLevel(event, "brother") > 0)
+      || (state.scope === "dropin" && event.status === "drop-in");
     return personMatches && dayMatches && scopeMatches;
   }
 
@@ -279,14 +305,6 @@
       });
     });
     return conflicts;
-  }
-
-  function minimumBadge(event) {
-    if (!event.access.length) return "Open";
-    if (event.access.includes("Add-on")) return "Add-on";
-    if (event.access.includes("Discover")) return "Discover";
-    if (event.access.includes("Experience")) return "Experience";
-    return "Full";
   }
 
   function writeURL() {

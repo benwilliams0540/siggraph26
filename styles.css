@@ -661,10 +661,14 @@ noscript {
     display: none;
   }
 
+  .segmented {
+    flex-wrap: wrap;
+  }
+
   .segmented button {
     display: grid;
-    flex: 1;
-    min-width: 0;
+    flex: 1 1 auto;
+    min-width: fit-content;
     padding: .35rem .34rem;
     font-size: .64rem;
     line-height: 1.15;
@@ -744,4 +748,50 @@ noscript {
   html {
     scroll-behavior: auto;
   }
+}
+
+.event-card.event-stub {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  padding: .5rem .85rem;
+  opacity: .55;
+}
+
+.event-stub .stub-time {
+  flex: none;
+  font-size: .67rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.event-stub .stub-title {
+  font-size: .72rem;
+  text-decoration: line-through;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-stub .past-label {
+  flex: none;
+  margin-left: auto;
+  font-size: .61rem;
+  color: var(--muted);
+}
+
+.overlap-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.overlap-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
