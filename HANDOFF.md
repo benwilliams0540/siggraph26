@@ -8,7 +8,7 @@ Maintain and publish the live SIGGRAPH 2026 itinerary for Ben and Steve througho
 
 Canonical project state:
 
-- Local repo: `/Users/brw/Developer/apps/siggraph-2026-itinerary`
+- Local repo: `/Users/brw/Developer/apps/siggraph26`
 - GitLab project: `https://gitlab.com/brw2/siggraph26`
 - Live public site: `https://siggraph26-a0ec18.gitlab.io`
 - Default branch: `main`
