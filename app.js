@@ -50,7 +50,7 @@
   function hydrateFromURL() {
     const params = new URLSearchParams(window.location.search);
     if (["both", "me", "brother"].includes(params.get("person"))) state.person = params.get("person");
-    if (["all", "priority", "shared", "dropin"].includes(params.get("scope"))) state.scope = params.get("scope");
+    if (["all", "priority", "shared"].includes(params.get("scope"))) state.scope = params.get("scope");
     if (["auto", "all", ...data.days.map((day) => day.date)].includes(params.get("day"))) state.day = params.get("day");
   }
 
@@ -265,8 +265,7 @@
     const dayMatches = selectedDay === "all" || event.date === selectedDay;
     const scopeMatches = state.scope === "all"
       || (state.scope === "priority" && priorityInterest(event) >= 3)
-      || (state.scope === "shared" && interestLevel(event, "me") > 0 && interestLevel(event, "brother") > 0)
-      || (state.scope === "dropin" && event.status === "drop-in");
+      || (state.scope === "shared" && interestLevel(event, "me") > 0 && interestLevel(event, "brother") > 0);
     return personMatches && dayMatches && scopeMatches;
   }
 
