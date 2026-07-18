@@ -53,7 +53,8 @@
     const flightDays = data.events
       .filter((event) => /flight/i.test(event.type))
       .map((event) => event.date);
-    if (flightDays.includes(today)) travelPanel.open = true;
+    const travelPanelDays = new Set(flightDays.flatMap((date) => [date, shiftISODate(date, -1)]));
+    if (travelPanelDays.has(today)) travelPanel.open = true;
   }
 
   function hydrateFromURL() {
@@ -377,6 +378,12 @@
   function timeToMinutes(value) {
     const [hours, minutes] = value.split(":").map(Number);
     return hours * 60 + minutes;
+  }
+
+  function shiftISODate(value, days) {
+    const date = new Date(`${value}T12:00:00Z`);
+    date.setUTCDate(date.getUTCDate() + days);
+    return date.toISOString().slice(0, 10);
   }
 
   function formatTime(value) {
