@@ -9,7 +9,7 @@
  */
 
 window.ITINERARY_DATA = {
-  updatedAt: "2026-07-17T23:35:00-04:00",
+  updatedAt: "2026-07-18T09:13:00-04:00",
   conference: {
     name: "SIGGRAPH 2026",
     subtitle: "Ben + Steve at SIGGRAPH 2026",
@@ -50,7 +50,12 @@ window.ITINERARY_DATA = {
       title: "American · CLT → LAX",
       status: "Confirmed",
       lines: ["Sun, Jul 19 · at CLT by 7:00 a.m. EDT", "AA 1995 · 8:57 a.m. EDT → 10:56 a.m. PDT", "Nonstop · 4h 59m · Basic Economy"],
-      note: "$526 per person round trip · $1,052 total."
+      links: [
+        { label: "Track AA 1995", url: "https://www.flightaware.com/live/flight/AAL1995" },
+        { label: "CLT on Maps", url: "https://www.google.com/maps/search/?api=1&query=Charlotte+Douglas+International+Airport" },
+        { label: "LAX on Maps", url: "https://www.google.com/maps/search/?api=1&query=Los+Angeles+International+Airport" }
+      ],
+      note: "Check-in opens 24 hours before departure in the AA app."
     },
     {
       id: "hotel",
@@ -58,7 +63,10 @@ window.ITINERARY_DATA = {
       eyebrow: "Stay",
       title: "Hotel in Los Angeles",
       status: "TBD",
-      lines: ["Hotel name", "Address", "Check-in / confirmation"],
+      lines: ["Hotel name", "Address", "Check-in time"],
+      links: [
+        { label: "LACC on Maps", url: "https://www.google.com/maps/search/?api=1&query=Los+Angeles+Convention+Center" }
+      ],
       note: "Prefer an official conference hotel or somewhere walkable to LACC."
     },
     {
@@ -68,7 +76,11 @@ window.ITINERARY_DATA = {
       title: "American · LAX → CLT",
       status: "Confirmed",
       lines: ["Sat, Jul 25", "AA 1159 · 11:00 a.m. PDT → 7:00 p.m. EDT", "Nonstop · 5h 00m · Basic Economy"],
-      note: "Aim for LAX by 9:00 a.m. with bags."
+      links: [
+        { label: "Track AA 1159", url: "https://www.flightaware.com/live/flight/AAL1159" },
+        { label: "LAX on Maps", url: "https://www.google.com/maps/search/?api=1&query=Los+Angeles+International+Airport" }
+      ],
+      note: "Aim for LAX by 9:00 a.m. with bags. Check-in opens 24 hours before departure in the AA app."
     }
   ],
 

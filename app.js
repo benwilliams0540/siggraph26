@@ -79,6 +79,7 @@
         <p class="eyebrow">${escapeHTML(item.eyebrow)}</p>
         <h3>${escapeHTML(item.title)}</h3>
         <ul>${item.lines.map((line) => `<li>${escapeHTML(line)}</li>`).join("")}</ul>
+        ${item.links?.length ? `<p class="logistics-links">${item.links.map((link) => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHTML(link.label)} ↗</a>`).join("")}</p>` : ""}
         <p class="note">${escapeHTML(item.note)}</p>
       </article>
     `).join("");

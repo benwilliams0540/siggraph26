@@ -795,3 +795,25 @@ noscript {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
+
+.logistics-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin: .5rem 0 0;
+}
+
+.logistics-links a {
+  font-size: .61rem;
+  font-weight: 650;
+  color: var(--accent, #7fd4c1);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .22rem .55rem;
+}
+
+.logistics-links a:hover,
+.logistics-links a:focus-visible {
+  border-color: currentColor;
+}
