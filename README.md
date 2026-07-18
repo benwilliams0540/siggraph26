@@ -1,6 +1,9 @@
 # SIGGRAPH 2026 itinerary
 
-A build-free conference itinerary for Ben and Steve, designed for GitHub Pages and quick AI-assisted updates during SIGGRAPH.
+A build-free conference itinerary for Ben and Steve, designed for GitLab Pages and quick AI-assisted updates during SIGGRAPH.
+
+- Live site: https://siggraph26-a0ec18.gitlab.io
+- GitLab project: https://gitlab.com/brw2/siggraph26
 
 ## Why this is deliberately simple
 
@@ -30,6 +33,8 @@ git commit -m "content: update conference itinerary"
 git push origin main
 glab ci status
 ```
+
+Then verify the live site at https://siggraph26-a0ec18.gitlab.io.
 
 For UI changes, stage the specific HTML, CSS, or JavaScript files as well. Do not commit the generated `public/` directory; the pipeline creates it for each deployment.
 
