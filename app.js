@@ -195,7 +195,7 @@
             <div>
               <p>${escapeHTML(month)} · ${escapeHTML(day.short)}</p>
               <h3>${escapeHTML(day.label)}</h3>
-              <p>${escapeHTML(day.theme)} · ${events.length} ${plural(events.length, "pick")}</p>
+              <p>${escapeHTML(day.theme)} · ${events.length} ${plural(events.length, "plan")}</p>
             </div>
           </header>
           <div class="event-list">${cards}</div>
@@ -210,7 +210,7 @@
     const overlapControl = overlapCount
       ? ` · <button type="button" class="overlap-toggle" data-overlap-toggle aria-pressed="${state.overlapsOnly}">${state.overlapsOnly ? "showing overlaps · show all" : `${overlapCount} with timing overlaps`}</button>`
       : "";
-    elements.liveSummary.innerHTML = `${visibleEvents.length} ${plural(visibleEvents.length, "pick")}${overlapControl}`;
+    elements.liveSummary.innerHTML = `${visibleEvents.length} ${plural(visibleEvents.length, "plan")}${overlapControl}`;
   }
 
   function renderEvent(event, conflicts, today, nowMinutes) {

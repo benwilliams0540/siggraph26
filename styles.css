@@ -135,9 +135,15 @@ footer {
   white-space: nowrap;
 }
 
-.source-link {
+.source-links {
+  display: grid;
   flex: 0 0 auto;
+  gap: .05rem;
+  justify-items: end;
   margin-left: auto;
+}
+
+.source-link {
   color: var(--steve);
   font-size: .68rem;
   font-weight: 800;
@@ -648,12 +654,13 @@ noscript {
     font-size: .62rem;
   }
 
-  .source-link {
-    font-size: 0;
+  .source-links {
+    gap: 0;
   }
 
-  .source-link span {
-    font-size: .75rem;
+  .source-link {
+    font-size: .58rem;
+    line-height: 1.2;
   }
 
   .control-row {
