@@ -9,12 +9,14 @@ Maintain and publish the live SIGGRAPH 2026 itinerary for Ben and Steve througho
 Canonical project state:
 
 - Local repo: `/Users/brw/Developer/apps/siggraph26`
-- GitLab project: `https://gitlab.com/brw2/siggraph26`
-- Live public site: `https://siggraph26-a0ec18.gitlab.io`
+- GitHub project: `https://github.com/benwilliams0540/siggraph26`
+- Live public site: `https://benwilliams0540.github.io/siggraph26/`
+- GitLab backup: `https://gitlab.com/brw2/siggraph26`
+- Backup public site: `https://siggraph26-a0ec18.gitlab.io`
 - Default branch: `main`
 - Conference time zone: `America/Los_Angeles`
 
-Start every task by reading `AGENTS.md`, `README.md`, the live worktree status, and the files relevant to the requested change. Recheck the GitLab and live-site state instead of assuming this handoff is current. Preserve unrelated work and stage only explicit paths.
+Start every task by reading `AGENTS.md`, `README.md`, the live worktree status, and the files relevant to the requested change. Recheck the GitHub, GitLab backup, and live-site state instead of assuming this handoff is current. Preserve unrelated work and stage only explicit paths.
 
 The site is intentionally plain HTML, CSS, and JavaScript. Keep it build-free and easy to repair from a phone or hotel room. Do not add a framework, package manager, database, server, Pawl runtime, or third-party runtime unless I explicitly ask.
 
@@ -47,8 +49,9 @@ After each change:
 3. Load the page locally when UI behavior or styling changed, including a phone-width check when relevant.
 4. Review `git diff` and `git status` so unrelated changes stay untouched.
 5. Commit only the intended paths with a concise commit message.
-6. Push `main` to `origin` and wait for GitLab Pages with `glab ci status --wait`.
-7. Verify that `https://siggraph26-a0ec18.gitlab.io` serves the updated public page without authentication.
+6. Push `main` to the GitHub `origin` and GitLab `gitlab` remotes.
+7. Wait for the GitHub Pages build to report `built` with `gh api repos/benwilliams0540/siggraph26/pages/builds/latest`, and wait for the GitLab backup with `glab ci status --wait`.
+8. Verify that `https://benwilliams0540.github.io/siggraph26/` and `https://siggraph26-a0ec18.gitlab.io` serve the updated public page without authentication.
 
 Publishing itinerary updates to this public project is expected when I ask you to change or maintain the itinerary. If I ask only for analysis, recommendations, or a preview, do not publish unless I also request an update. Report the commit, pipeline result, live verification, and any remaining uncertainty at handoff.
 

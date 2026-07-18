@@ -1,9 +1,10 @@
 # SIGGRAPH 2026 itinerary
 
-A build-free conference itinerary for Ben and Steve, designed for GitLab Pages and quick AI-assisted updates during SIGGRAPH.
+A build-free conference itinerary for Ben and Steve, designed for GitHub Pages and quick AI-assisted updates during SIGGRAPH.
 
-- Live site: https://siggraph26-a0ec18.gitlab.io
-- GitLab project: https://gitlab.com/brw2/siggraph26
+- Live site: https://benwilliams0540.github.io/siggraph26/
+- GitHub project: https://github.com/benwilliams0540/siggraph26
+- GitLab backup: https://gitlab.com/brw2/siggraph26 · https://siggraph26-a0ec18.gitlab.io
 
 ## Why this is deliberately simple
 
@@ -21,9 +22,9 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-## Publish on GitLab Pages
+## Publish
 
-The site publishes from `main` through `.gitlab-ci.yml`. The Pages job validates both JavaScript files, copies the static site into its deployment artifact, and publishes it without a package install or application build.
+The primary site publishes the root of `main` directly through GitHub Pages. The `origin` remote points to GitHub. The `gitlab` remote remains a backup; its `.gitlab-ci.yml` Pages job validates both JavaScript files, copies the static site into its deployment artifact, and publishes it without a package install or application build.
 
 After an itinerary update:
 
@@ -31,10 +32,12 @@ After an itinerary update:
 git add itinerary-data.js
 git commit -m "content: update conference itinerary"
 git push origin main
-glab ci status
+git push gitlab main
+gh api repos/benwilliams0540/siggraph26/pages/builds/latest --jq '{status,commit}'
+glab ci status --wait
 ```
 
-Then verify the live site at https://siggraph26-a0ec18.gitlab.io.
+Wait for both deployments, then verify the primary site at https://benwilliams0540.github.io/siggraph26/ and the backup at https://siggraph26-a0ec18.gitlab.io.
 
 For UI changes, stage the specific HTML, CSS, or JavaScript files as well. Do not commit the generated `public/` directory; the pipeline creates it for each deployment.
 

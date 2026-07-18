@@ -1,6 +1,6 @@
 # Itinerary maintenance rules
 
-- Keep this a build-free static site suitable for GitLab Pages. Do not add a framework, package manager, server, database, or third-party runtime unless the user explicitly asks.
+- Keep this a build-free static site suitable for GitHub Pages and the GitLab Pages backup. Do not add a framework, package manager, server, database, or third-party runtime unless the user explicitly asks.
 - Treat `itinerary-data.js` as the source of truth. Normal schedule, badge, traveler, flight, hotel, and selection updates belong there; do not edit UI files for routine content changes.
 - Preserve the traveler IDs `me` and `brother`, ISO dates, and 24-hour Los Angeles conference times.
 - Keep `start` and `end` normalized to Los Angeles time for sorting and overlap checks. Travel events may add `displayStart` and `displayEnd` when their human-facing local time zones differ.
