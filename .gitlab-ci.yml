@@ -1,0 +1,15 @@
+stages:
+  - deploy
+
+deploy-pages:
+  stage: deploy
+  image: node:22-alpine
+  script:
+    - node --check app.js
+    - node --check itinerary-data.js
+    - mkdir -p public
+    - cp index.html styles.css app.js itinerary-data.js .nojekyll public/
+  pages:
+    publish: public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

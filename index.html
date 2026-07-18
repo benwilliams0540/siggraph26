@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1110">
+    <meta name="description" content="A two-person itinerary for SIGGRAPH 2026 in Los Angeles.">
+    <title>SIGGRAPH 2026 · Ben + Steve</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="itinerary-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#schedule">Skip to schedule</a>
+
+    <header class="control-deck" id="top" aria-label="Itinerary controls">
+      <div class="control-topline">
+        <a class="wordmark" href="#top" aria-label="SIGGRAPH 2026 itinerary home">
+          <span>SIGGRAPH</span><strong>26</strong>
+        </a>
+        <span class="trip-label">Ben + Steve · Los Angeles</span>
+        <a class="source-link" data-schedule-link href="https://s2026.conference-schedule.org/" target="_blank" rel="noreferrer">
+          Official schedule <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="control-row">
+        <div class="control-group">
+          <span class="control-label">Whose schedule?</span>
+          <div class="segmented" data-person-controls>
+            <button type="button" data-person="both" aria-pressed="true">Both</button>
+            <button type="button" data-person="me" aria-pressed="false">Ben</button>
+            <button type="button" data-person="brother" aria-pressed="false">Steve</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <span class="control-label">What to show?</span>
+          <div class="segmented" data-scope-controls>
+            <button type="button" data-scope="all" aria-pressed="true">All picks</button>
+            <button type="button" data-scope="priority" aria-pressed="false">Priorities</button>
+            <button type="button" data-scope="full" aria-pressed="false">Full sessions</button>
+          </div>
+        </div>
+
+        <p class="live-summary" data-live-summary aria-live="polite"></p>
+      </div>
+
+      <nav class="day-strip" aria-label="Filter by day" data-day-controls></nav>
+    </header>
+
+    <main>
+      <details class="travel-panel">
+        <summary>
+          <span><strong>Travel & passes</strong> · Tentative AA flights · Hotel TBD</span>
+          <span>Ben: Full · Steve: likely Full</span>
+        </summary>
+        <div class="logistics-grid" data-logistics></div>
+      </details>
+
+      <section class="schedule-section" id="schedule" aria-labelledby="schedule-title">
+        <h1 class="visually-hidden" id="schedule-title">SIGGRAPH 2026 itinerary</h1>
+
+        <div class="schedule" data-schedule></div>
+        <div class="empty-state" data-empty hidden>
+          <p class="eyebrow">Nothing here</p>
+          <h3>No picks match these filters.</h3>
+          <button type="button" data-reset-filters>Show the whole week</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>Field note:</strong> session times and rooms can move. Use the official schedule link on each card for the last word.</p>
+      <p>Last itinerary update <time data-updated-at></time>.</p>
+    </footer>
+
+    <noscript>This itinerary needs JavaScript enabled to filter and render the schedule.</noscript>
+  </body>
+</html>
