@@ -9,7 +9,7 @@
  */
 
 window.ITINERARY_DATA = {
-  updatedAt: "2026-07-17T21:53:07-04:00",
+  updatedAt: "2026-07-17T23:35:00-04:00",
   conference: {
     name: "SIGGRAPH 2026",
     subtitle: "Ben + Steve at SIGGRAPH 2026",
@@ -49,8 +49,8 @@ window.ITINERARY_DATA = {
       eyebrow: "Outbound flight",
       title: "American · CLT → LAX",
       status: "Confirmed",
-      lines: ["Sun, Jul 19 · arrive CLT 7:00 a.m. EDT", "Flight: 8:57 a.m. EDT → 10:56 a.m. PDT", "Nonstop · 4h 59m · Basic Economy"],
-      note: "$526 per person round trip · $1,052 total. Flight numbers are not yet recorded here."
+      lines: ["Sun, Jul 19 · at CLT by 7:00 a.m. EDT", "AA 1995 · 8:57 a.m. EDT → 10:56 a.m. PDT", "Nonstop · 4h 59m · Basic Economy"],
+      note: "$526 per person round trip · $1,052 total."
     },
     {
       id: "hotel",
@@ -67,8 +67,8 @@ window.ITINERARY_DATA = {
       eyebrow: "Return flight",
       title: "American · LAX → CLT",
       status: "Confirmed",
-      lines: ["Sat, Jul 25", "11:00 a.m. PDT → 7:00 p.m. EDT", "Nonstop · 5h 00m · Basic Economy"],
-      note: "Confirmed return. Flight number is not yet recorded here."
+      lines: ["Sat, Jul 25", "AA 1159 · 11:00 a.m. PDT → 7:00 p.m. EDT", "Nonstop · 5h 00m · Basic Economy"],
+      note: "Aim for LAX by 9:00 a.m. with bags."
     }
   ],
 
@@ -91,15 +91,15 @@ window.ITINERARY_DATA = {
       end: "10:56",
       displayStart: "7:00a EDT",
       displayEnd: "10:56a PDT",
-      title: "Arrive CLT · American Airlines to LAX",
-      subtitle: "Flight departs 8:57 a.m. EDT · lands 10:56 a.m. PDT",
-      type: "Confirmed travel",
+      title: "Morning flight · Charlotte to Los Angeles",
+      subtitle: "At CLT by 7:00 a.m. · departs 8:57 a.m. EDT · lands 10:56 a.m. PDT",
+      type: "Confirmed flight",
       location: "CLT → LAX",
       people: ["me", "brother"],
       access: [],
       status: "anchor",
       showInterest: false,
-      note: "Confirmed flight. Airport arrival and landing are shown in their local time zones; overlap calculations still use Los Angeles time."
+      note: "Times are shown in each airport’s local zone; overlap checks still use Los Angeles time."
     },
     {
       id: "sun-lax-transfer",
@@ -117,33 +117,6 @@ window.ITINERARY_DATA = {
       note: "Planning buffer; adjust for bags, pickup and the hotel once those details are known."
     },
     {
-      id: "sun-game-audio",
-      date: "2026-07-19",
-      start: "10:45",
-      end: "11:15",
-      title: "Game Audio Lasagna",
-      subtitle: "Building layers to create new sonic worlds",
-      type: "Games Summit",
-      location: "411 Theatre",
-      people: ["brother"],
-      access: ["Experience", "Full"],
-      status: "option",
-      note: "Steve will still be in flight on the confirmed itinerary."
-    },
-    {
-      id: "sun-animation-theater",
-      date: "2026-07-19",
-      start: "12:30",
-      end: "13:30",
-      title: "Animation Theater 1: Open Worlds",
-      type: "Computer Animation Festival",
-      location: "411 Theatre",
-      people: ["brother"],
-      access: ["Experience", "Full"],
-      status: "option",
-      note: "A useful creative reset, but 12:30 p.m. is a stretch after an LAX arrival."
-    },
-    {
       id: "sun-performance-capture",
       date: "2026-07-19",
       start: "13:45",
@@ -155,7 +128,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "One of Sunday's clearest bridges between acting and digital production."
+      note: "Pipeline walkthrough from capture stage to finished cinematic."
     },
     {
       id: "sun-tyree",
@@ -168,7 +141,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "Full-only conversation with an animation director; promising for directing and performance perspective."
+      note: "A moderated conversation with animation director Tyree Dillihay. Full badge only."
     },
     {
       id: "sun-career",
@@ -182,7 +155,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "option",
-      note: "Not voice-acting-specific, but useful for translating a non-linear creative career into a portfolio."
+      note: "Practical resume and demo-reel guidance. Not voice-specific."
     },
     {
       id: "sun-stage-presence",
@@ -196,7 +169,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "recommended",
-      note: "The most directly theatre-specific Full-only item: distributed rehearsal, spatial memory and performer agency.",
+      note: "Agile Lens presents a multi-user XR rehearsal platform, evaluated with professional theatre makers: distributed rehearsal, spatial memory, performer agency. Full badge only.",
       url: "https://s2026.conference-schedule.org/presentation/?id=gensub_323&sess=sess183"
     },
     {
@@ -211,7 +184,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "A strong late-Sunday target if the flight arrives that afternoon."
+      note: "Open community discussion on AI choreography and embodied performance. Late enough to make even with an afternoon arrival."
     },
     {
       id: "sun-badge-pickup",
@@ -225,7 +198,7 @@ window.ITINERARY_DATA = {
       access: [],
       status: "anchor",
       showInterest: false,
-      note: "Tentative arrival target. Sunday registration and attendee services close at 6:00 p.m."
+      note: "Registration and attendee services close at 6:00 p.m. Sunday."
     },
     {
       id: "sun-gaussian-posters",
@@ -240,7 +213,7 @@ window.ITINERARY_DATA = {
       interest: { me: 4, brother: 1 },
       access: ["Experience", "Full"],
       status: "drop-in",
-      note: "The poster displays run all afternoon, so Ben can browse them between fixed sessions.",
+      note: "Posters up all afternoon, including continual-learning 3DGS under structural and lighting change. Easy to browse between fixed sessions.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess431"
     },
     {
@@ -256,7 +229,7 @@ window.ITINERARY_DATA = {
       interest: { me: 1, brother: 3 },
       access: ["Experience", "Full"],
       status: "drop-in",
-      note: "A flexible Steve track while Ben explores the 3D and rendering posters.",
+      note: "Includes speech-driven facial animation in Unreal and Laban-based motion analysis. Same lobby as the 3DGS sweep, all afternoon.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess453"
     },
     {
@@ -272,7 +245,7 @@ window.ITINERARY_DATA = {
       interest: { me: 3, brother: 0 },
       access: ["Full"],
       status: "recommended",
-      note: "Capture, scanning, digital twins and simulation make this adjacent to Ben's reconstruction work."
+      note: "Capture, scanning, digital twins and simulation — directly adjacent to 3DGS reconstruction work."
     },
     {
       id: "sun-between-frames",
@@ -287,7 +260,7 @@ window.ITINERARY_DATA = {
       interest: { me: 1, brother: 3 },
       access: ["Full"],
       status: "recommended",
-      note: "A reachable Full Conference block with clear links to performance and animation workflows.",
+      note: "Four short talks chaired by Disney's Michael Reed: Roto-Lite transformer rotoscoping, anime in-betweening with video models, and a defense of Euler angles. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess172"
     },
     {
@@ -303,7 +276,7 @@ window.ITINERARY_DATA = {
       interest: { me: 2, brother: 2 },
       access: ["Experience", "Full"],
       status: "option",
-      note: "Useful first-conference orientation if the competing technical and performance sessions are less compelling."
+      note: "Orientation on how the conference is organized and how to navigate it. An easy skip if a competing session wins."
     },
     {
       id: "sun-openusd",
@@ -318,7 +291,7 @@ window.ITINERARY_DATA = {
       interest: { me: 3, brother: 1 },
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "A practical pipeline discussion that complements Ben's 3DGS and interchange interests."
+      note: "Roundtable on OpenUSD adoption across film and game pipelines."
     },
     {
       id: "sun-wizard-oz-sphere",
@@ -333,7 +306,7 @@ window.ITINERARY_DATA = {
       interest: { me: 2, brother: 4 },
       access: ["Full"],
       status: "recommended",
-      note: "A strong Steve pick: performance continuity, immersive staging and hybrid VFX production.",
+      note: "Sphere Studios, Magnopus and Google DeepMind on taking 1939's 4:3 footage to a 16K dome: generative super-resolution, character outpainting and AI performance generation.",
       url: "https://s2026.conference-schedule.org/presentation/?id=pros_114&sess=sess159"
     },
     {
@@ -349,7 +322,7 @@ window.ITINERARY_DATA = {
       interest: { me: 4, brother: 2 },
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "A must for the splat paper previews; also a useful way for both travelers to survey the week."
+      note: "Every technical paper pitches itself in seconds, back to back. The fastest survey of the week — splat papers included."
     },
 
     // Monday
@@ -365,7 +338,7 @@ window.ITINERARY_DATA = {
       interest: { me: 2, brother: 2 },
       access: ["Discover", "Experience", "Full"],
       status: "option",
-      note: "Shared opening before the schedules diverge."
+      note: "Conference welcome, then a keynote from Disney Imagineer Lanny Smoot."
     },
     {
       id: "mon-educator-careers",
@@ -379,7 +352,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "Directly relevant to Steve's former theatre-education work."
+      note: "Industry tools and workflows through a teaching lens."
     },
     {
       id: "mon-impulse",
@@ -393,7 +366,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "drop-in",
-      note: "Drop in between sessions to record movement and apply it to digital dancers."
+      note: "Record movement and apply it to digital dancers — open all day for drop-ins."
     },
     {
       id: "mon-ai-education",
@@ -406,7 +379,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "option",
-      note: "Useful context if Steve returns to arts education."
+      note: "A survey of how AI is landing in classrooms and teaching practice."
     },
     {
       id: "mon-3dgs-1",
@@ -419,7 +392,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "anchor",
-      note: "Core paper block and a top priority now that Ben has Full Conference access.",
+      note: "Papers include structure-aware densification, SHARP-GS ultra-high-res rendering and A LoD of Gaussians for out-of-core scenes. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess137"
     },
     {
@@ -434,7 +407,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "A strong Full-only look at preserving actor intent across 2,500 facial-motion shots.",
+      note: "Wētā FX supervisors on the production: native-stereo virtual cinematography, the new Kora fire solver, and preserving actor intent across 2,500 facial-motion shots. Full badge only.",
       url: "https://s2026.conference-schedule.org/presentation/?id=pros_106&sess=sess160"
     },
     {
@@ -449,7 +422,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "The first explicit Experience-accessible 3DGS session."
+      note: "Case study of 3DGS shipped in a playable web title."
     },
     {
       id: "mon-powered-splats",
@@ -463,7 +436,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "wishlist",
-      note: "Full-only and directly useful, but overlaps the end of the web-gaming presentation."
+      note: "Hands-on course on turning world models into interactive 3D worlds. Overlaps the end of the web-gaming session."
     },
     {
       id: "mon-electronic-theater",
@@ -478,7 +451,7 @@ window.ITINERARY_DATA = {
       interest: { me: 2, brother: 3 },
       access: ["Add-on"],
       status: "option",
-      note: "Shared evening option. Experience and Discover attendees can add a $60 ticket."
+      note: "The festival's curated evening screening. Experience and Discover badges can add the $60 ticket."
     },
 
     // Tuesday
@@ -494,7 +467,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Top-priority community session."
+      note: "Open community session on advanced 3DGS applications — practitioners comparing notes."
     },
     {
       id: "tue-zootopia",
@@ -507,7 +480,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "Full-only animation and character-development option."
+      note: "World and character development process for Zootopia 2. Full badge only."
     },
     {
       id: "tue-chaos-ray-traced",
@@ -521,7 +494,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Discover", "Experience", "Full"],
       status: "anchor",
-      note: "Production-focused splat pipeline from Chaos.",
+      note: "Chaos' Chris Nichols on the June July pipeline: location scans from an XGrids scanner and Alexa 35 becoming HDR splats staged in Chaos Arena for lighting and camera planning.",
       url: "https://s2026.conference-schedule.org/presentation/?id=ind_113&sess=sess511"
     },
     {
@@ -536,7 +509,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Live acting in VR followed by a reveal of actor menus, triggers and show controls.",
+      note: "Ferryman Collective performs a short VR scene live, then reveals the backstage systems — triggers, actor menus, show control.",
       url: "https://s2026.conference-schedule.org/presentation/?id=gensub_347&sess=sess373"
     },
     {
@@ -551,7 +524,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "Excellent for directing and storytelling, but it conflicts with the more voice-specific Expanded Voices.",
+      note: "Brad Bird on Ray Gunn, his neo-noir animated detective film for Netflix, with unseen development material. Conflicts with Expanded Voices.",
       url: "https://s2026.conference-schedule.org/presentation/?id=cafcur_102&sess=sess488"
     },
     {
@@ -566,7 +539,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "The week's most directly voice-related session, focused on cloning, identity, embodiment and authorship.",
+      note: "Barcelona Supercomputing Center and vocalist María Arnal turn voice cloning and latent-space visualization into an interactive installation. The week's most direct hit on voice work.",
       url: "https://s2026.conference-schedule.org/presentation/?id=artpl_135&sess=sess229"
     },
     {
@@ -595,7 +568,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Dance, poetry, projection mapping and p5.js in a youth-theatre production.",
+      note: "UCSB and Processing Foundation researchers on an immersive youth-theatre production: dance, poetry, projection mapping and p5.js authorship.",
       url: "https://s2026.conference-schedule.org/presentation/?id=gensub_395&sess=sess209"
     },
     {
@@ -609,7 +582,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Industry/research bridge and one of the most valuable Experience sessions."
+      note: "Discussion of shipping radiance fields in real-time and web stacks, spanning research and industry."
     },
     {
       id: "tue-lod-gaussians",
@@ -623,7 +596,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "option",
-      note: "Drop-in demo that overlaps Deploying Radiance Fields."
+      note: "Drop-in demo of out-of-core splat training; the same work presents as a paper in Monday's 3DGS I block. Overlaps Deploying Radiance Fields."
     },
     {
       id: "tue-nurec",
@@ -636,7 +609,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Discover", "Experience", "Full"],
       status: "option",
-      note: "Another overlapping option; prioritize based on whether deployment or simulation matters more."
+      note: "Overlaps the other two — the choice is deployment versus simulation."
     },
     {
       id: "tue-roll-reality",
@@ -650,7 +623,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Live improvisation combining tabletop performance, motion capture, AI narrative and real-time XR.",
+      note: "District Cinema and Epic Games run a live improvised D&D show through motion capture, AI narrative tools and real-time XR.",
       url: "https://s2026.conference-schedule.org/presentation/?id=gensubcur105&sess=sess380"
     },
 
@@ -666,7 +639,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "Useful market context, even if voice work itself is not the focus."
+      note: "The studio hiring picture across animation and VFX."
     },
     {
       id: "wed-gausmoke",
@@ -694,7 +667,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "Prefer this over the overlapping demos unless a specific presenter is essential."
+      note: "Community discussion on splat-based animation workflows. Overlaps the morning demos."
     },
     {
       id: "wed-motion-capture-society",
@@ -734,7 +707,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "The clearest Experience-level match for Steve's theatre-company background."
+      note: "The clearest crossover between live theatre production and virtual stages."
     },
     {
       id: "wed-cheap-cheerful",
@@ -748,7 +721,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "Potentially useful for making ambitious work with home-studio resources."
+      note: "Techniques for prototyping spatial stories on minimal budgets."
     },
     {
       id: "wed-refact",
@@ -762,7 +735,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "option",
-      note: "Performance-first option before the late-afternoon conflict."
+      note: "A live hybrid movement performance. Ends before the late-afternoon conflict window."
     },
     {
       id: "wed-ai-mocap",
@@ -776,7 +749,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "Practical choice; overlaps the Full-only facial-performance talks."
+      note: "Hands-on: video footage to previs mocap in Flow Studio and Maya. Overlaps the facial-performance talks."
     },
     {
       id: "wed-show-feelings",
@@ -790,7 +763,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "The strongest Full-only performance-to-digital-character block.",
+      note: "Three talks: Predator: Badlands emotion work, Rigs2Emotion automatic classification from facial rigs, and Wētā's case study of Varang's performance in Fire and Ash. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess174"
     },
     {
@@ -805,7 +778,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "An art/research crossover using multiple 3DGS reconstructions and volumetric printing.",
+      note: "ShanghaiTech reconstructs multiple plausible 3D readings of figurative paintings with 3DGS, then volumetrically prints them to make the ambiguity physical.",
       url: "https://s2026.conference-schedule.org/presentation/?id=artps_121&sess=sess231"
     },
 
@@ -861,7 +834,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "Director, VFX supervisor and animator discuss keeping artists in control of generative workflows.",
+      note: "Google DeepMind's animated short about a sleepless night: the director, VFX supervisor and supervising animator on masked video-to-video generation with artists in control.",
       url: "https://s2026.conference-schedule.org/presentation/?id=pros_109&sess=sess161"
     },
     {
@@ -876,7 +849,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Experience", "Full"],
       status: "anchor",
-      note: "The week's clearest Experience-level hands-on 3DGS course.",
+      note: "NVIDIA lab with Omniverse NuRec: multi-GPU reconstruction, object segmentation, then into Isaac Lab robotics simulation. Runs on the Experience badge.",
       url: "https://s2026.conference-schedule.org/presentation/?id=gensub_527&sess=sess265"
     },
     {
@@ -890,7 +863,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "recommended",
-      note: "A natural networking and reflection session for Steve's theatre-education background."
+      note: "Open town hall for the education community."
     },
     {
       id: "thu-3dgs-2",
@@ -903,7 +876,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "anchor",
-      note: "Second core 3DGS paper block and a top priority with Full Conference access.",
+      note: "Papers include 4D splatting under uncertainty, learned view-dependent kernels, Radiance Fields from Photons and reflective dual splatting. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess136"
     },
     {
@@ -918,7 +891,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Full"],
       status: "wishlist",
-      note: "Technical rather than practical, but highly relevant to technologies reshaping voice work.",
+      note: "Papers include MAViD audio-visual dialogue, Audio-Omni audio generation and Just-Dub-It automatic dubbing — the research edge of voice tech.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess101"
     },
     {
@@ -932,7 +905,7 @@ window.ITINERARY_DATA = {
       people: ["me"],
       access: ["Full"],
       status: "anchor",
-      note: "Final major splat session and a top priority with Full Conference access.",
+      note: "Papers include RaDe-GS depth rasterization, sparse-view GeoQuery and Inria's immediate unordered-input reconstruction, closing with an interactive discussion. Full badge only.",
       url: "https://s2026.conference-schedule.org/session/?sess=sess138"
     },
 
@@ -1040,7 +1013,7 @@ window.ITINERARY_DATA = {
       date: "2026-07-25",
       start: "11:00",
       end: "16:00",
-      title: "American Airlines · LAX → CLT",
+      title: "Flight home · Los Angeles to Charlotte",
       subtitle: "Departs 11:00 a.m. PDT · lands 7:00 p.m. EDT",
       type: "Confirmed flight",
       location: "LAX → CLT",
@@ -1048,7 +1021,7 @@ window.ITINERARY_DATA = {
       access: [],
       status: "anchor",
       showInterest: false,
-      note: "Confirmed nonstop flight · 5h 00m · Basic Economy."
+      note: "Nonstop · 5h 00m · Basic Economy. Aim for LAX by 9:00 a.m. with bags."
     }
   ]
 };
