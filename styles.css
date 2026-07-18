@@ -697,10 +697,6 @@ noscript {
     padding: .58rem .7rem;
   }
 
-  .travel-panel summary span:last-of-type {
-    display: none;
-  }
-
   .schedule-section {
     padding-top: .85rem;
   }

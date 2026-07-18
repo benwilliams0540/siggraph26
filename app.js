@@ -213,10 +213,12 @@
           </p>
           <p class="event-note">${escapeHTML(event.note)}</p>
         </div>
-        <div class="interest-graph" aria-label="Interest levels">
-          <span class="interest-title">Interest</span>
-          ${data.travelers.map((traveler) => renderInterestRow(event, traveler)).join("")}
-        </div>
+        ${event.showInterest === false ? "" : `
+          <div class="interest-graph" aria-label="Interest levels">
+            <span class="interest-title">Interest</span>
+            ${data.travelers.map((traveler) => renderInterestRow(event, traveler)).join("")}
+          </div>
+        `}
       </article>
     `;
   }

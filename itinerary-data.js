@@ -5,10 +5,11 @@
  * form and times in 24-hour Los Angeles conference time. An event may provide
  * an explicit interest map with 0–4 values for `me` (Ben) and `brother`
  * (Steve); otherwise the UI derives interest from `people` and `status`.
+ * Shared logistics may set `showInterest: false` to omit preference bars.
  */
 
 window.ITINERARY_DATA = {
-  updatedAt: "2026-07-17T19:45:03-04:00",
+  updatedAt: "2026-07-17T21:53:07-04:00",
   conference: {
     name: "SIGGRAPH 2026",
     subtitle: "Ben + Steve at SIGGRAPH 2026",
@@ -47,9 +48,9 @@ window.ITINERARY_DATA = {
       icon: "↗",
       eyebrow: "Outbound flight",
       title: "American · CLT → LAX",
-      status: "Considering",
+      status: "Confirmed",
       lines: ["Sun, Jul 19 · arrive CLT 7:00 a.m. EDT", "Flight: 8:57 a.m. EDT → 10:56 a.m. PDT", "Nonstop · 4h 59m · Basic Economy"],
-      note: "$526 per person round trip · $1,052 total. Flight numbers are not visible in the screenshot."
+      note: "$526 per person round trip · $1,052 total. Flight numbers are not yet recorded here."
     },
     {
       id: "hotel",
@@ -65,9 +66,9 @@ window.ITINERARY_DATA = {
       icon: "↙",
       eyebrow: "Return flight",
       title: "American · LAX → CLT",
-      status: "Considering",
-      lines: ["Sat, Jul 25 · confirm date", "11:00 a.m. PDT → 7:00 p.m. EDT", "Nonstop · 5h 00m · Basic Economy"],
-      note: "The date comes from the earlier Jul 19–25 search; it is not visible in the attached fare screenshot."
+      status: "Confirmed",
+      lines: ["Sat, Jul 25", "11:00 a.m. PDT → 7:00 p.m. EDT", "Nonstop · 5h 00m · Basic Economy"],
+      note: "Confirmed return. Flight number is not yet recorded here."
     }
   ],
 
@@ -77,7 +78,8 @@ window.ITINERARY_DATA = {
     { date: "2026-07-21", short: "Tue", label: "Tuesday", theme: "The big overlap day" },
     { date: "2026-07-22", short: "Wed", label: "Wednesday", theme: "Animation, capture & performance" },
     { date: "2026-07-23", short: "Thu", label: "Thursday", theme: "Worlds, reconstruction & wrap-up" },
-    { date: "2026-07-25", short: "Sat", label: "Saturday", theme: "Tentative flight home" }
+    { date: "2026-07-24", short: "Fri", label: "Friday", theme: "Free day in Los Angeles" },
+    { date: "2026-07-25", short: "Sat", label: "Saturday", theme: "Flight home" }
   ],
 
   events: [
@@ -91,12 +93,13 @@ window.ITINERARY_DATA = {
       displayEnd: "10:56a PDT",
       title: "Arrive CLT · American Airlines to LAX",
       subtitle: "Flight departs 8:57 a.m. EDT · lands 10:56 a.m. PDT",
-      type: "Tentative travel",
+      type: "Confirmed travel",
       location: "CLT → LAX",
       people: ["me", "brother"],
       access: [],
       status: "anchor",
-      note: "Airport arrival and landing are shown in their local time zones; overlap calculations still use Los Angeles time."
+      showInterest: false,
+      note: "Confirmed flight. Airport arrival and landing are shown in their local time zones; overlap calculations still use Los Angeles time."
     },
     {
       id: "sun-lax-transfer",
@@ -110,7 +113,8 @@ window.ITINERARY_DATA = {
       people: ["me", "brother"],
       access: [],
       status: "anchor",
-      note: "Tentative planning block; adjust once the flight, bags and hotel are confirmed."
+      showInterest: false,
+      note: "Planning buffer; adjust for bags, pickup and the hotel once those details are known."
     },
     {
       id: "sun-game-audio",
@@ -124,7 +128,7 @@ window.ITINERARY_DATA = {
       people: ["brother"],
       access: ["Experience", "Full"],
       status: "option",
-      note: "Steve would still be in flight on the tentative itinerary."
+      note: "Steve will still be in flight on the confirmed itinerary."
     },
     {
       id: "sun-animation-theater",
@@ -220,6 +224,7 @@ window.ITINERARY_DATA = {
       people: ["me", "brother"],
       access: [],
       status: "anchor",
+      showInterest: false,
       note: "Tentative arrival target. Sunday registration and attendee services close at 6:00 p.m."
     },
     {
@@ -931,6 +936,104 @@ window.ITINERARY_DATA = {
       url: "https://s2026.conference-schedule.org/session/?sess=sess138"
     },
 
+    // Friday — free day in Los Angeles
+    {
+      id: "fri-downtown-morning",
+      date: "2026-07-24",
+      start: "09:00",
+      end: "11:00",
+      title: "Downtown morning: Grand Central Market & The Last Bookstore",
+      subtitle: "Breakfast stalls, the book labyrinth and Disney Concert Hall",
+      type: "Free day",
+      location: "Downtown LA",
+      people: ["me", "brother"],
+      access: [],
+      status: "recommended",
+      interest: { me: 3, brother: 2 },
+      note: "Grand Central Market opens at 8:00 a.m.; The Last Bookstore's Downtown page currently lists a 10:00 a.m. Friday opening. Confirm the route once the hotel is known.",
+      url: "https://grandcentralmarket.com/visit-the-market/"
+    },
+    {
+      id: "fri-academy-museum",
+      date: "2026-07-24",
+      start: "11:30",
+      end: "14:30",
+      title: "Academy Museum of Motion Pictures",
+      subtitle: "Jaws (final weekend), Greenwood/Spencer production design, Ghibli PONYO",
+      type: "Free day",
+      location: "Miracle Mile",
+      people: ["me", "brother"],
+      access: [],
+      status: "anchor",
+      interest: { me: 3, brother: 4 },
+      note: "Jaws: The Exhibition closes Jul 26 — this is its final weekend. Book timed entry ahead. LACMA and the La Brea Tar Pits are on the same block. Either/or with the Warner Bros. tour.",
+      url: "https://www.academymuseum.org/"
+    },
+    {
+      id: "fri-warner-tour",
+      date: "2026-07-24",
+      start: "12:00",
+      end: "15:00",
+      title: "Warner Bros. Studio Tour",
+      subtitle: "Working soundstages and the Burbank backlot",
+      type: "Free day",
+      location: "Burbank",
+      people: ["me", "brother"],
+      access: [],
+      status: "option",
+      interest: { me: 2, brother: 4 },
+      note: "The either/or alternative to the Academy Museum: about one guided hour plus two self-guided hours. Advance booking required; pairs with Griffith afterward.",
+      url: "https://www.wbstudiotour.com/tour/studio/"
+    },
+    {
+      id: "fri-santa-monica",
+      date: "2026-07-24",
+      start: "14:00",
+      end: "17:00",
+      title: "Santa Monica Pier & Venice decompress",
+      subtitle: "The Pacific, if Thursday emptied the tank",
+      type: "Free day",
+      location: "Santa Monica",
+      people: ["me", "brother"],
+      access: [],
+      status: "option",
+      interest: { me: 2, brother: 2 },
+      note: "Low-energy alternative to the museum/studio afternoon; also positions closer to LAX for the Saturday 11:00 a.m. departure.",
+      url: "https://www.santamonicapier.org/"
+    },
+    {
+      id: "fri-griffith-sunset",
+      date: "2026-07-24",
+      start: "17:30",
+      end: "20:30",
+      title: "Griffith Observatory at sunset",
+      subtitle: "Hollywood sign, basin panorama and golden hour",
+      type: "Free day",
+      location: "Griffith Park",
+      people: ["me", "brother"],
+      access: [],
+      status: "anchor",
+      interest: { me: 4, brother: 3 },
+      note: "Free and open until 10:00 p.m. Sunset is 8:00 p.m. on Jul 24. Allow extra time for Friday traffic, parking or the DASH shuttle.",
+      url: "https://griffithobservatory.lacity.gov/visit/"
+    },
+    {
+      id: "fri-improv-evening",
+      date: "2026-07-24",
+      start: "21:30",
+      end: "22:50",
+      title: "Groundlings late show",
+      subtitle: "Friday sketch and improv after Griffith",
+      type: "Free day",
+      location: "Hollywood",
+      people: ["me", "brother"],
+      access: [],
+      status: "option",
+      interest: { me: 2, brother: 4 },
+      note: "The Groundlings currently lists its 80-minute late show on Fridays at 9:30 p.m. Verify Jul 24 availability before booking.",
+      url: "https://groundlings.com/shows/the-completely-different-late-show"
+    },
+
     // Saturday travel
     {
       id: "sat-return-flight",
@@ -939,12 +1042,13 @@ window.ITINERARY_DATA = {
       end: "16:00",
       title: "American Airlines · LAX → CLT",
       subtitle: "Departs 11:00 a.m. PDT · lands 7:00 p.m. EDT",
-      type: "Tentative flight",
+      type: "Confirmed flight",
       location: "LAX → CLT",
       people: ["me", "brother"],
       access: [],
       status: "anchor",
-      note: "Nonstop · 5h 00m · Basic Economy. July 25 comes from the earlier search and still needs confirmation."
+      showInterest: false,
+      note: "Confirmed nonstop flight · 5h 00m · Basic Economy."
     }
   ]
 };
