@@ -9,7 +9,7 @@
  */
 
 window.ITINERARY_DATA = {
-  updatedAt: "2026-07-18T01:49:15-04:00",
+  updatedAt: "2026-07-20T18:06:14-07:00",
   travelSummary: "Flights booked · Hotel booked",
   conference: {
     name: "SIGGRAPH 2026",
@@ -89,7 +89,7 @@ window.ITINERARY_DATA = {
   days: [
     { date: "2026-07-19", short: "Sun", label: "Sunday", theme: "Arrival & orientation" },
     { date: "2026-07-20", short: "Mon", label: "Monday", theme: "Research, author discussions & roundtables" },
-    { date: "2026-07-21", short: "Tue", label: "Tuesday", theme: "3DGS, industry & Real-Time Live" },
+    { date: "2026-07-21", short: "Tue", label: "Tuesday", theme: "3DGS, industry & networking" },
     { date: "2026-07-22", short: "Wed", label: "Wednesday", theme: "Animation, exhibition & open standards" },
     { date: "2026-07-23", short: "Thu", label: "Thursday", theme: "Worlds, reconstruction & wrap-up" },
     { date: "2026-07-24", short: "Fri", label: "Friday", theme: "Free day in Los Angeles" },
@@ -694,30 +694,14 @@ window.ITINERARY_DATA = {
       start: "16:00",
       end: "17:00",
       title: "Notes, Exhibition follow-ups & reset",
-      subtitle: "Turn the day's conversations into next actions before the evening anchor",
+      subtitle: "Turn the day's conversations into next actions while details are fresh",
       type: "Protected buffer",
       location: "LACC",
       people: ["me"],
       access: [],
       status: "recommended",
       showInterest: false,
-      note: "Capture names, affiliations, promised follow-ups and the problems people described. Revisit one booth if useful, then eat and recharge before Real-Time Live."
-    },
-    {
-      id: "tue-real-time-live",
-      date: "2026-07-21",
-      start: "18:00",
-      end: "19:45",
-      title: "Real-Time Live!",
-      subtitle: "Includes OnTheFly / GraphDeco's immediate 3DGS reconstruction demo",
-      type: "Real-Time Live!",
-      location: "Hall K",
-      people: ["me", "brother"],
-      interest: { me: 4, brother: 3 },
-      access: ["Full"],
-      status: "anchor",
-      note: "Non-negotiable Tuesday anchor. Evaluate what immediate feedback actually looks like live, note the capture guidance and failure presentation, and use it to prepare one informed Thursday question.",
-      url: "https://s2026.conference-schedule.org/session/?sess=sess315"
+      note: "Capture names, affiliations, promised follow-ups and the problems people described. Revisit one booth if useful, then eat and recharge."
     },
 
     // Wednesday
